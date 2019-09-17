@@ -476,7 +476,9 @@ before packages are loaded."
     (with-eval-after-load 'org (setq org-agenda-files
                                    '("~/Dropbox/org/")))
     (setq org-bullets-bullet-list '("◉" "◎" "⚫" "○" "►" "◇"))
-    '((sequence "TODO(t!)" "PROCESSING(p!)" "BLOCKED(b!)" "|" "DONE(F!)"))
+
+    (setq org-todo-keywords
+        '((sequence "TODO(t!)" "PROCESSING(p!)" "BLOCKED(b!)" "|" "DONE(D!)")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
