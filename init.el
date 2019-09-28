@@ -474,12 +474,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-    (with-eval-after-load 'org (setq org-agenda-files
-                                   '("~/Dropbox/org/")))
-    (setq org-bullets-bullet-list '("◉" "◎" "⚫" "○" "►" "◇"))
 
-    (setq org-todo-keywords
-        '((sequence "TODO(t!)" "PROCESSING(p!)" "BLOCKED(b!)" "|" "DONE(D!)")))
+    '(init-org :location "./init-org.el")
+
+    (use-package company
+      :config
+      (push 'company-lsp company-backends))
+
+    (require 'lsp-ui)
+    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+
+    (add-hook 'typescript-mode-hook 'flycheck-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
