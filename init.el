@@ -486,6 +486,18 @@ before packages are loaded."
     (setq org-journal-date-prefix "#+TITLE: ")
     (setq org-journal-date-format "%A, %B %d %Y")
 
+    ;; (defun pc/new-buffer-p ()
+    ;;   (not (file-exists-p (buffer-file-name))))
+
+    ;; (defun pc/insert-journal-template ()
+    ;;   (let ((template-file (expand-file-name "template.org" "~/Dropbox/org/journal")))
+    ;;     (when (pc/new-buffer-p)
+    ;;       (save-excursion
+    ;;         (goto-char (point-min))
+    ;;         (insert-file-contents template-file)))))
+
+    ;; (add-hook 'org-journal-after-entry-create-hook #'pc/insert-journal-template)
+
     (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                    (file+headline "~/Dropbox/org/gtd/inbox.org" "Tasks")
                                    "* TODO %i%?")
