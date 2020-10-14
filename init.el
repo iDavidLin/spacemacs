@@ -476,12 +476,19 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
+    ;; Set to the location of your Org files on your local system
+    (setq org-directory "~/org")
+    ;; Set to the name of the file where new notes will be stored
+    (setq org-mobile-inbox-for-pull "~/org/flagged.org")
+    ;; Set to <your Dropbox root directory>/MobileOrg.
+    (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
     (with-eval-after-load 'org (setq org-agenda-files
                                      '("~/Dropbox/org/gtd")))
 
     (setq org-bullets-bullet-list '("◉" "◎" "⚫" "○" "►" "◇"))
 
-    (setq org-journal-dir "~/Dropbox/org/journal/2019")
+    (setq org-journal-dir "~/Dropbox/org/journal/2020")
     (setq org-journal-file-format "%Y-%m-%d")
     (setq org-journal-date-prefix "#+TITLE: ")
     (setq org-journal-date-format "%A, %B %d %Y")
